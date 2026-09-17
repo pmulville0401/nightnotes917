@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Night Notes Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Night Notes Tracker</h1>
+
+  <div id="status" class="status">Connecting to database...</div>
+
+  <div class="stats">
+    <div id="openCount">Open: 0</div>
+    <div id="completeCount">Completed: 0</div>
+  </div>
+
+  <div class="form">
+    <h2>Add new note</h2>
+    <input id="project" placeholder="Project Name">
+    <input id="title" placeholder="Item Title">
+    <input id="assigned" placeholder="Assigned To">
+    <input id="due" type="date">
+    <select id="priority">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+      <option>Critical</option>
+    </select>
+    <textarea id="desc" placeholder="Description"></textarea>
+    <button id="createButton" type="button">Create Item</button>
+  </div>
+
+  <h2>Full Notes</h2>
+  <select id="projectFilter">
+    <option>All Projects</option>
+  </select>
+
+  <div class="toolbar">
+    <button id="printButton" type="button">Print Report</button>
+    <button id="exportButton" type="button">Export Excel</button>
+    <button id="refreshButton" type="button">Refresh</button>
+  </div>
+
+  <div class="open-section">
+    <h2>🔴 Open Items</h2>
+    <div id="openItems"></div>
+  </div>
+
+  <div class="closed-section">
+    <h2>✅ Completed Items</h2>
+    <div id="closedItems"></div>
+  </div>
+</div>
+
+<!-- Supabase JavaScript client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
